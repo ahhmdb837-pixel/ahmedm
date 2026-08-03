@@ -25,7 +25,7 @@ body {
     overflow-x: hidden;
 }
 
-/* --- Header & Navbar --- */
+
 header {
     position: fixed;
     top: 0;
@@ -106,7 +106,7 @@ header {
     cursor: pointer;
 }
 
-/* --- Main Sections --- */
+
 main {
     margin-top: 95px;
     min-height: calc(100vh - 190px);
@@ -128,7 +128,7 @@ main {
     transform: translateY(0);
 }
 
-/* --- Hero Section & Uncle Image Top --- */
+
 .hero {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
@@ -138,7 +138,7 @@ main {
     position: relative;
 }
 
-/* الهيدر العلوي بصورة عمك أعلى اليسار */
+
 .hero-header-box {
     display: flex;
     align-items: center;
@@ -195,7 +195,7 @@ main {
     margin-bottom: 2rem;
 }
 
-/* --- Profile Frame --- */
+
 .hero-image-wrapper {
     position: relative;
     text-align: center;
@@ -238,7 +238,7 @@ main {
     white-space: nowrap;
 }
 
-/* --- Stats --- */
+
 .hero-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -265,7 +265,7 @@ main {
     color: var(--gold-primary);
 }
 
-/* --- About Header with Uncle Avatar --- */
+
 .about-header-with-avatar {
     display: flex;
     align-items: center;
@@ -289,7 +289,7 @@ main {
     transform: scale(1.1) rotate(5deg);
 }
 
-/* --- Gallery Grid (2 Photos Only) --- */
+
 .gallery-grid-two {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -341,7 +341,7 @@ main {
     box-shadow: 0 15px 35px rgba(212, 175, 55, 0.25);
 }
 
-/* --- Landmarks Grid --- */
+
 .landmarks-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -387,7 +387,7 @@ main {
     margin-bottom: 0.5rem;
 }
 
-/* --- Timeline --- */
+
 .timeline {
     max-width: 800px;
     margin: 0 auto;
@@ -411,7 +411,7 @@ main {
     margin-bottom: 1rem;
 }
 
-/* --- Contact & Buttons --- */
+
 .btn {
     display: inline-flex;
     align-items: center;
@@ -554,24 +554,20 @@ footer {
         display: block;
     }
 }
-/* =========================================================
-   📱 التجاوب الكامل للشاشات الصغيرة والموبايل (Responsive Fix)
-   ========================================================= */
 
-/* منع الخروج عن حد الشاشة */
 html, body {
     width: 100%;
     overflow-x: hidden;
 }
 
-/* تعديل الأحجام العامة للموبايل */
+
 @media (max-width: 768px) {
     main {
         margin-top: 75px;
         padding: 1rem 0.8rem;
     }
 
-    /* الهيرو والصفحة الرئيسية */
+  
     .hero {
         grid-template-columns: 1fr !important;
         gap: 1.5rem !important;
@@ -600,7 +596,7 @@ html, body {
         margin: 1rem 0 !important;
     }
 
-    /* صور البروفايل والأطر */
+  
     .profile-frame img {
         height: auto !important;
         max-height: 320px !important;
@@ -612,7 +608,7 @@ html, body {
         height: 65px !important;
     }
 
-    /* الإحصائيات والكروت */
+    
     .hero-stats {
         grid-template-columns: repeat(3, 1fr) !important;
         gap: 0.5rem !important;
@@ -630,7 +626,7 @@ html, body {
         font-size: 0.75rem !important;
     }
 
-    /* معرض الصور ومعالم مصر */
+   
     .gallery-grid-two {
         grid-template-columns: 1fr !important;
         gap: 1.2rem !important;
@@ -662,7 +658,7 @@ html, body {
         padding: 1.5rem 1rem !important;
     }
 
-    /* أزرار التواصل والتفاعل */
+   
     .btn {
         width: 100% !important;
         padding: 0.8rem 1rem !important;
@@ -671,7 +667,7 @@ html, body {
         word-wrap: break-word;
     }
 
-    /* الناف بار في الموبايل */
+    
     .mobile-toggle {
         display: block !important;
     }
