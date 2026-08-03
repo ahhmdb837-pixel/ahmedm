@@ -3,274 +3,280 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>وليد صابر أمين | Egypt VIP Tours</title>
+    <title>وليد صابر أمين خليل | مرشد سياحي VIP</title>
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <style>
-        body { font-family: 'Cairo', sans-serif; }
-        
-        .gold-text {
-            background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 50%, #aa771c 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .glass-card {
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(245, 158, 11, 0.25);
-            transition: all 0.3s ease-in-out;
-        }
-
-        .glass-card:hover {
-            border-color: rgba(245, 158, 11, 0.6);
-            box-shadow: 0 15px 30px -10px rgba(245, 158, 11, 0.2);
-        }
-
-        .nav-btn {
-            transition: all 0.3s ease;
-        }
-        .nav-btn:hover {
-            transform: translateX(-6px);
-            background: rgba(245, 158, 11, 0.15);
-            color: #fbbf24;
-            border-color: rgba(245, 158, 11, 0.4);
-        }
-
-        .img-zoom {
-            overflow: hidden;
-        }
-        .img-zoom img {
-            transition: transform 0.4s ease;
-        }
-        .img-zoom:hover img {
-            transform: scale(1.05);
-        }
-    </style>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen relative selection:bg-amber-500 selection:text-slate-950">
+<body>
 
-    <!-- SIDEBAR (القائمة الجانبية) -->
-    <aside class="w-full lg:w-80 lg:fixed lg:top-0 lg:left-0 lg:h-screen bg-slate-900 border-r border-amber-500/20 z-50 flex flex-col justify-between p-6 shadow-2xl">
-        <div class="space-y-6 text-center">
-            
-            <!-- صورة البروفايل -->
-            <div class="relative group inline-block">
-                <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-amber-700 rounded-full blur opacity-40 group-hover:opacity-100 transition duration-500"></div>
-                <img src="sss.jpeg" alt="وليد صابر أمين" class="relative w-24 h-24 rounded-full mx-auto border-2 border-amber-400 object-cover shadow-2xl transition duration-300 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/150'">
+    <!-- Header / Navbar -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo" onclick="switchPage('home', event)">
+                <i class="fa-solid fa-pyramid"></i> وليد خليل
+            </a>
+            <div class="mobile-toggle" id="mobile-toggle">
+                <i class="fa-solid fa-bars"></i>
             </div>
-
-            <div>
-                <h2 class="text-xl font-black text-white">وليد صابر أمين</h2>
-                <span class="text-xs text-amber-400 font-bold block mt-1">مرشد سياحي VIP</span>
-            </div>
-            
-            <!-- أزرار التنقل -->
-            <nav class="space-y-3 pt-2">
-                <button onclick="showSection('home')" class="nav-btn w-full flex items-center gap-4 px-4 py-3 rounded-2xl text-slate-300 font-bold border border-transparent">
-                    <i class="fa-solid fa-house w-6 text-center text-amber-400"></i> الرئيسية
-                </button>
-                <button onclick="showSection('about')" class="nav-btn w-full flex items-center gap-4 px-4 py-3 rounded-2xl text-slate-300 font-bold border border-transparent">
-                    <i class="fa-solid fa-user-tie w-6 text-center text-amber-400"></i> من أنا
-                </button>
-                <button onclick="showSection('tours')" class="nav-btn w-full flex items-center gap-4 px-4 py-3 rounded-2xl text-slate-300 font-bold border border-transparent">
-                    <i class="fa-solid fa-landmark w-6 text-center text-amber-400"></i> المعالم والرحلات
-                </button>
-                <button onclick="showSection('certificates')" class="nav-btn w-full flex items-center gap-4 px-4 py-3 rounded-2xl text-slate-300 font-bold border border-transparent">
-                    <i class="fa-solid fa-award w-6 text-center text-amber-400"></i> الشهادات
-                </button>
-                <button onclick="showSection('booking')" class="nav-btn w-full flex items-center gap-4 px-4 py-3 rounded-2xl text-slate-300 font-bold border border-transparent">
-                    <i class="fa-brands fa-whatsapp w-6 text-center text-amber-400"></i> الحجز والتواصل
-                </button>
-            </nav>
+            <ul class="nav-links" id="nav-links">
+                <li><a class="nav-link active" onclick="switchPage('home', event)">الرئيسية</a></li>
+                <li><a class="nav-link" onclick="switchPage('about', event)">من أنا</a></li>
+                <li><a class="nav-link" onclick="switchPage('gallery', event)">معرض الصور</a></li>
+                <li><a class="nav-link" onclick="switchPage('landmarks', event)">معالم مصر</a></li>
+                <li><a class="nav-link" onclick="switchPage('credentials', event)">المؤهلات والخبرة</a></li>
+                <li><a class="nav-link" onclick="switchPage('contact', event)">تواصل معي</a></li>
+            </ul>
         </div>
+    </header>
 
-        <div class="text-center text-xs text-slate-500 border-t border-amber-500/10 pt-4">
-            © 2026 جميع الحقوق محفوظة
-        </div>
-    </aside>
+    <main>
+        <!-- 1. الصفحة الرئيسية (Home) -->
+        <section id="home" class="page-section active">
+            <div class="hero">
+                <div class="hero-text">
+                    <div class="vip-badge">
+                        <i class="fa-solid fa-crown"></i> مرشد سياحي VIP
+                    </div>
+                    
+                    <!-- الهيدر الرئيسي مع صورة عمك أعلى اليسار -->
+                    <div class="hero-header-box">
+                        <div class="hero-title-group">
+                            <h1>وليد صابر أمين خليل</h1>
+                            <h2>مرشد سياحي معتمد لكشوفات <span>حضارة مصر الخالدة</span></h2>
+                        </div>
+                        <div class="uncle-hero-thumb">
+                            <!-- ضع رابط صورة عمك هنا -->
+                            <img src="sss.jpeg" alt="وليد صابر أمين خليل" id="uncle-top-img">
+                        </div>
+                    </div>
 
-    <!-- MAIN CONTENT -->
-    <main class="lg:ml-80 p-6 lg:p-12 min-h-screen">
-        
-        <!-- 1. الرئيسية (HOME) - مع صورة الأهرامات تحت الكلام -->
-        <div id="sec-home" class="tab-content block space-y-8 max-w-5xl mx-auto py-6">
-            <div class="glass-card rounded-3xl p-8 lg:p-12 text-center space-y-6">
-                
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-amber-500/40 bg-amber-500/10 text-amber-300 text-xs font-bold">
-                    <i class="fa-solid fa-crown text-amber-400"></i> خبير الإرشاد السياحي للوفود الفاخرة
-                </div>
-
-                <h1 class="text-4xl lg:text-6xl font-black leading-tight">
-                    اكتشف أسرار الحضارة مع <span class="gold-text">خبرة 20 عاماً</span>
-                </h1>
-
-                <p class="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">
-                    رحلات تاريخية مخصصة مع المرشد <strong class="text-white">وليد صابر أمين</strong> بطلاقة كاملة للغات الروسية والإنجليزية.
-                </p>
-
-                <div class="pt-2 flex flex-wrap justify-center gap-4">
-                    <button onclick="showSection('booking')" class="px-8 py-4 rounded-2xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-lg transition duration-300 shadow-xl hover:scale-105 flex items-center gap-3">
-                        <i class="fa-brands fa-whatsapp text-xl"></i> احجز جولتك الآن
+                    <p>أهلاً بكم.. أرافقكم في رحلات سياحية VIP خاصة ومجموعات لاستكشاف سحر التاريخ المصري بأسلوب احترافي باللغتين الروسية والإنجليزية منذ عام 2006.</p>
+                    
+                    <button class="btn btn-glow" onclick="switchPage('contact', event)">
+                        احجز جولة سياحية VIP <i class="fa-solid fa-arrow-left"></i>
                     </button>
-                </div>
-
-                <!-- صورة الأهرامات تحت الكلام والزرار مباشرة -->
-                <div class="pt-6">
-                    <div class="img-zoom rounded-2xl border-2 border-amber-500/30 overflow-hidden shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=1200&q=80" alt="أهرامات الجيزة" class="w-full h-80 lg:h-96 object-cover">
+                    
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <h3>2006</h3>
+                            <p>بداية العمل والخبرة</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>100%</h3>
+                            <p>معالم مصر السياحية</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>2</h3>
+                            <p>روسي وإنجليزي</p>
+                        </div>
                     </div>
                 </div>
 
+                <!-- إطار بروفايل عمك الرئيسي بدلاً من صور AI -->
+                <div class="hero-image-wrapper">
+                    <div class="profile-frame">
+                        <!-- ضع رابط صورة عمك الرئيسية هنا -->
+                        <img src="WhatsApp Image 2026-08-03 at 1.44.08 AM.jpeg" alt="وليد صابر أمين خليل - صورة البروفايل الرئيسية">
+                    </div>
+                    <div class="vip-tag-motion">
+                        <i class="fa-solid fa-star"></i> VIP Tourism Guide
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <!-- 2. من أنا (ABOUT) -->
-        <div id="sec-about" class="tab-content hidden space-y-8 max-w-5xl mx-auto py-6">
-            <h2 class="text-3xl font-black gold-text mb-6"> وليد صابر أمين؟</h2>
-            
-            <div class="glass-card p-8 rounded-3xl space-y-4">
-                <h3 class="text-2xl font-bold text-amber-400">مسيرة مهنية تمتد لـ 20 عاماً</h3>
-                <p class="text-slate-300 leading-relaxed">
-                    بدأت عملي في مجال الإرشاد السياحي عقب التخرج من كلية الألسن جامعة عين شمس عام 2006. متخصص في تقديم جولات تعريفية وتاريخية مفصلة لأهم المزارات في القاهرة، الجيزة، والأقصر وأسوان.
-                </p>
-                <div class="pt-2">
-                    <h4 class="text-amber-400 font-bold text-base mb-2"><i class="fa-solid fa-language ml-2"></i> إتقان اللغات:</h4>
-                    <ul class="text-slate-300 text-sm space-y-1 pr-4 list-disc">
-                        <li>اللغة الروسية (طلاقة تامة - تحدثاً وكتابة)</li>
-                        <li>اللغة الإنجليزية (مستوى متقدم للوفود الرسمية)</li>
-                    </ul>
+        <!-- 2. من أنا (About) -->
+        <section id="about" class="page-section">
+            <div class="section-header about-header-with-avatar">
+                <div class="about-avatar">
+                    <!-- صورة عمك بجانب من هو وليد -->
+                    <img src="sss.jpeg" alt="وليد صابر أمين خليل">
+                </div>
+                <div>
+                    <h2>من هو <span>وليد صابر أمين خليل</span></h2>
+                    <p>خبرة تتجاوز 18 عاماً في تقديم أرقى الخدمات السياحية بمعالم جمهورية مصر العربية</p>
                 </div>
             </div>
 
-            <!-- الصورتين جنب بعض وبدون أي تداخل -->
-            <div class="glass-card p-8 rounded-3xl space-y-6 border-2 border-amber-500/40">
-                <h3 class="text-2xl font-black text-amber-400 text-center">خلال المرفقات والجولات الميدانية</h3>
-                <p class="text-slate-300 text-center text-sm max-w-2xl mx-auto">
-                    توثيق حقيقي لجولات الميدانية رفقة السائحين والوفود.
-                </p>
+            <div class="about-grid">
+                <div class="info-card">
+                    <i class="fa-solid fa-compass-drafting"></i>
+                    <h3>خبرة ميدانية من 2006</h3>
+                    <p>خبرة عريقة في تنظيم وتوجيه الرحلات السياحية الشاملة لكافة الآثار والمعالم السياحية في مصر.</p>
+                </div>
+                <div class="info-card">
+                    <i class="fa-solid fa-language"></i>
+                    <h3>إتقان التحدث والترجمة</h3>
+                    <p>إتقان تام للغتين <strong>الروسية والإنجليزية</strong> لتوصيل شرح التاريخ بأسلوب ثري وممتع.</p>
+                </div>
+                <div class="info-card">
+                    <i class="fa-solid fa-user-shield"></i>
+                    <h3>جولات خاصة ومجموعات VIP</h3>
+                    <p>تقديم خدمات الإرشاد المخصص للمجموعات السياحية والرحلات VIP الخاصة بأعلى درجات الرفاهية والأمان.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. معرض صور عمي (2 صور فقط) -->
+        <section id="gallery" class="page-section">
+            <div class="section-header">
+                <h2>معرض صور <span>الأستاذ وليد خليل VIP</span></h2>
+                <p>صور البروفايل الشخصية ولقطات العمل الميداني</p>
+            </div>
+            <div class="gallery-grid-two">
+                <!-- صورة عمك 1 -->
+                <div class="gallery-card">
+                    <img src="sed.jpeg" alt="الأستاذ وليد صابر أمين خليل - صورة 1">
+                    <div class="gallery-overlay">
+                        <h3>وليد صابر أمين خليل</h3>
+                        <p>مرشد سياحي معتمد</p>
+                    </div>
+                </div>
+                <!-- صورة عمك 2 -->
+                <div class="gallery-card">
+                    <img src="mmmmm.jpeg" alt="الأستاذ وليد صابر أمين خليل - صورة 2">
+                    <div class="gallery-overlay">
+                        <h3>جولات سياحية خاصة VIP</h3>
+                        <p>إرشاد سياحي باللغة الروسية والإنجليزية</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. معالم مصر -->
+        <section id="landmarks" class="page-section">
+            <div class="section-header">
+                <h2>معالم <span>مصر السياحية الخالدة</span></h2>
+                <p>تغطية شاملة لجميع الآثار والمعالم المصرية</p>
+            </div>
+            <div class="landmarks-grid">
+                <div class="landmark-card">
+                    <div class="img-container">
+                        <img src="https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=800&q=80" alt="أهرامات الجيزة">
+                    </div>
+                    <div class="landmark-info">
+                        <h3>أهرامات الجيزة وأبو الهول</h3>
+                        <p>الجيزة - إحدى عجائب الدنيا السبع القديمة، رمز الحضارة والشموخ.</p>
+                    </div>
+                </div>
+
+                <div class="landmark-card">
+                    <div class="img-container">
+                        <img src="ooop.jpeg" alt="معبد الأقصر">
+                    </div>
+                    <div class="landmark-info">
+                        <h3>معابد الكرنك والأقصر</h3>
+                        <p>الأقصر - مجمع المعابد الأعظم في التاريخ وأكبر متحف مفتوح بالعالم.</p>
+                    </div>
+                </div>
+
+                <div class="landmark-card">
+                    <div class="img-container">
+                        <img src="معبد ابوسمبل.jpeg" alt="معبد أبو سمبل">
+                    </div>
+                    <div class="landmark-info">
+                        <h3>معبد أبو سمبل</h3>
+                        <p>أسوان - التحفة المعمارية للملك رمسيس الثاني ومعجزة تعامد الشمس.</p>
+                    </div>
+                </div>
+
+                <div class="landmark-card">
+                    <div class="img-container">
+                        <img src="mth.jpeg" alt="المتحف المصري الكبير">
+                    </div>
+                    <div class="landmark-info">
+                        <h3>المتحف المصري الكبير</h3>
+                        <p>القاهرة / الجيزة - أكبر متحف في العالم مخصص لحضارة واحدة، يضم المجموعة الكاملة للفيلم الأسطوري ومقتنيات الملك الذهبي توت عنخ آمون والآلاف من القطع الأثرية الفريدة.</p>
+                    </div>
+                </div>
+                <!-- 1. وادي الملوك والملكات -->
+<div class="landmark-card">
+    <div class="img-container">
+        <img src="wdu.jpeg" alt="وادي الملوك والملكات">
+    </div>
+    <div class="landmark-info">
+        <h3>وادي الملوك والملكات</h3>
+        <p>الأقصر - المقبرة الملكية الخالدة لعظماء وفراعنة مصر القديمة، وتضم مقبرة الفرعون الذهبي توت عنخ آمون وأروع النقوش والألوان الأثرية المحفوظة منذ آلاف السنين.</p>
+    </div>
+</div>
+
+<!-- 2. معبد فيلة -->
+<div class="landmark-card">
+    <div class="img-container">
+        <img src="mfj.jpeg" alt="معبد فيلة">
+    </div>
+    <div class="landmark-info">
+        <h3>معبد فيلة (إيزيس)</h3>
+        <p>أسوان - التحفة المعمارية المقامة على جزيرة أجيلكيا في قلب النيل، درة معابد أسوان والمكرس لرباط الحب والجمال لدى المصريين القدماء.</p>
+    </div>
+</div>
+
+<!-- 3. قلعة صلاح الدين وجامع مرمر -->
+<div class="landmark-card">
+    <div class="img-container">
+        <img src="salh.jpeg" alt="قلعة صلاح الدين">
+    </div>
+    <div class="landmark-info">
+        <h3>قلعة صلاح الدين وجامع مرمر</h3>
+        <p>القاهرة - إحدى أهم قلاع الحرب في العصور الوسطى، تطل على القاهرة الفاطمية وتتميز بجامع محمد علي ذي المآذن الشاهقة والتصميم العثماني الفاخر.</p>
+    </div>
+</div>
+            </div>
+        </section>
+
+        <!-- 5. المؤهلات والشهادات -->
+        <section id="credentials" class="page-section">
+            <div class="section-header">
+                <h2>المؤهلات <span>والشهادات الرسمية</span></h2>
+                <p>سجل أكاديمي ومهني موثوق لضمان تقديم أعلى درجات الاحترافية</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-date">2006</span>
+                    <h3>ليسانس ألسن - قسم اللغة الروسية</h3>
+                    <p><strong>جامعة عين شمس</strong> - التقدير العام: ممتاز / جيد جداً. دراسة متعمقة للغة الروسية والترجمة المباشرة.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">2011</span>
+                    <h3>دبلوم إرشاد سياحي معتمد</h3>
+                    <p><strong>معهد سيناء العالي للسياحة والفنادق</strong> - التقدير العام: <strong>جيد جداً</strong>. ترخيص رسمي لممارسة الإرشاد السياحي.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. تواصل معي -->
+        <section id="contact" class="page-section">
+            <div class="section-header">
+                <h2>تواصل مع <span>وليد صابر أمين خليل</span></h2>
+                <p>جاهز لتنسيق وتنفيذ أرقى الرحلات السياحية والجولات الخاصة VIP</p>
+            </div>
+            <div class="contact-box">
+                <i class="fa-solid fa-crown contact-icon"></i>
+                <h3>حجز الجولات السياحية VIP والخاصة</h3>
+                <p>يسعدنا استقبال طلباتكم للجولات باللغات الروسية والإنجليزية للمجموعات والأفراد.</p>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
-                    <div class="img-zoom rounded-2xl border border-amber-500/30 overflow-hidden shadow-lg bg-slate-900">
-                        <img src="mmmmm.jpeg" alt="وليد صابر 1" class="w-full h-80 object-cover" onerror="this.src='https://via.placeholder.com/500x400?text=Uncle+Photo+1'">
-                    </div>
-                    <div class="img-zoom rounded-2xl border border-amber-500/30 overflow-hidden shadow-lg bg-slate-900">
-                        <img src="WhatsApp Image 2026-08-03 at 1.44.08 AM.jpeg" alt="وليد صابر 2" class="w-full h-80 object-cover" onerror="this.src='https://via.placeholder.com/500x400?text=Uncle+Photo+2'">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 3. المعالم والرحلات (TOURS) -->
-        <div id="sec-tours" class="tab-content hidden space-y-8 max-w-6xl mx-auto py-6">
-            <h2 class="text-3xl font-black gold-text mb-6">معالم مصر والبرامج السياحية</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-                <div class="glass-card rounded-3xl overflow-hidden flex flex-col justify-between group">
-                    <div class="img-zoom h-64">
-                        <img src="https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="أهرامات الجيزة">
-                    </div>
-                    <div class="p-6 space-y-3">
-                        <h3 class="text-2xl font-bold text-white group-hover:text-amber-400 transition">أهرامات الجيزة وأبو الهول</h3>
-                        <p class="text-sm text-slate-300 leading-relaxed">جولة تاريخية شاملة لشرح أسرار بناء الأهرامات، زيارة تمثال أبو الهول، والمعابد الجنائزية مع التقاط أروع الصور.</p>
-                        <button onclick="showSection('booking')" class="w-full py-3 rounded-xl bg-amber-500/10 text-amber-400 hover:bg-amber-500 hover:text-slate-950 font-bold transition duration-300 mt-2">احجز هذه الجولة</button>
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-3xl overflow-hidden flex flex-col justify-between group">
-                    <div class="img-zoom h-64">
-                        <img src="https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="المتحف الكبير">
-                    </div>
-                    <div class="p-6 space-y-3">
-                        <h3 class="text-2xl font-bold text-white group-hover:text-amber-400 transition">المتحف المصري الكبير (GEM)</h3>
-                        <p class="text-sm text-slate-300 leading-relaxed">استكشاف أكبر متحف في العالم مخصص لحضارة واحدة، وشرح كامل لمجموعات الملك الذهبي توت عنخ آمون.</p>
-                        <button onclick="showSection('booking')" class="w-full py-3 rounded-xl bg-amber-500/10 text-amber-400 hover:bg-amber-500 hover:text-slate-950 font-bold transition duration-300 mt-2">احجز هذه الجولة</button>
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-3xl overflow-hidden flex flex-col justify-between group">
-                    <div class="img-zoom h-64">
-                        <img src="https://images.unsplash.com/photo-1539650116574-8efeb43e2750?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="معابد الأقصر">
-                    </div>
-                    <div class="p-6 space-y-3">
-                        <h3 class="text-2xl font-bold text-white group-hover:text-amber-400 transition">معابد الأقصر ووادي الملوك</h3>
-                        <p class="text-sm text-slate-300 leading-relaxed">رحلة إلى عاصمة مصر القديمة لتفقد معبد الكرنك، معبد حتشبسوت، ومقابر الفراعنة الشهيرة بوادي الملوك.</p>
-                        <button onclick="showSection('booking')" class="w-full py-3 rounded-xl bg-amber-500/10 text-amber-400 hover:bg-amber-500 hover:text-slate-950 font-bold transition duration-300 mt-2">احجز هذه الجولة</button>
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-3xl overflow-hidden flex flex-col justify-between group">
-                    <div class="img-zoom h-64">
-                        <img src="https://images.unsplash.com/photo-1572252821143-0259f9393081?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="خان الخليلي والمعز">
-                    </div>
-                    <div class="p-6 space-y-3">
-                        <h3 class="text-2xl font-bold text-white group-hover:text-amber-400 transition">خان الخليلي وشارع المعز</h3>
-                        <p class="text-sm text-slate-300 leading-relaxed">جولة سحرية في قلب القاهرة التاريخية بين المآذن الإسلامية، الأسواق القديمة، والمقاهي التراثية.</p>
-                        <button onclick="showSection('booking')" class="w-full py-3 rounded-xl bg-amber-500/10 text-amber-400 hover:bg-amber-500 hover:text-slate-950 font-bold transition duration-300 mt-2">احجز هذه الجولة</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 4. الشهادات (CERTIFICATES) -->
-        <div id="sec-certificates" class="tab-content hidden space-y-8 max-w-4xl mx-auto py-6">
-            <h2 class="text-3xl font-black gold-text mb-6">المؤهلات والشهادات المعتمدة</h2>
-            
-            <div class="space-y-4">
-                <div class="glass-card p-6 rounded-3xl border-r-8 border-amber-400 flex items-center gap-4">
-                    <i class="fa-solid fa-graduation-cap text-3xl text-amber-400"></i>
-                    <div>
-                        <h3 class="text-xl font-bold text-white">ليسانس ألسن - جامعة عين شمس (2006)</h3>
-                        <p class="text-slate-400 text-sm">قسم اللغة الروسية</p>
-                    </div>
-                </div>
-
-                <div class="glass-card p-6 rounded-3xl border-r-8 border-amber-400 flex items-center gap-4">
-                    <i class="fa-solid fa-certificate text-3xl text-amber-400"></i>
-                    <div>
-                        <h3 class="text-xl font-bold text-white">ترخيص وزارة السياحة والآثار المصرية</h3>
-                        <p class="text-slate-400 text-sm">مرشد سياحي معتمد لجميع المناطق الأثرية في مصر</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 5. الحجز والتواصل (BOOKING) -->
-        <div id="sec-booking" class="tab-content hidden space-y-8 max-w-3xl mx-auto py-6 text-center">
-            <div class="glass-card p-10 rounded-3xl space-y-6">
-                <h2 class="text-3xl font-bold gold-text">الحجز والتواصل المباشر</h2>
-                <p class="text-slate-300 text-sm">للتنسيق والاستفسار عن أسعار وتفاصيل الجولات السياحية:</p>
-                
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                    <a href="https://wa.me/201092999038?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D8%A3%D8%B3%D8%AA%D8%A7%D8%B0%20%D9%88%D9%84%D9%8A%D8%AF%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%A8%D8%AE%D8%B5%D9%88%D8%B5%20%D8%A7%D9%84%D8%B1%D8%AD%D9%84%D8%A7%D8%AA" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-lg shadow-lg hover:scale-105 transition duration-300 flex items-center justify-center gap-3">
-                        <i class="fa-brands fa-whatsapp text-2xl"></i> واتساب مباشر
+                <div class="contact-buttons">
+                    <a href="https://wa.me/201092999038?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%B3%D0%BE%D1%81%D0%BF%D0%BE%D0%B4%D0%B8%D0%BD%20%D0%92%D0%B0%D0%BB%D0%B8%D0%B4!%20%D0%AF%20%D0%B1%D1%8B%20%D1%85%D0%BE%D1%82%D0%B5%D0%BB%20%D0%B7%D0%B0%D0%B1%D1%80%D0%BE%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20%D0%B8%D0%BD%D0%B4%D0%B8%D0%B2%D0%B8%D0%B4%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D1%82%D1%83%D1%80%20%D0%BF%D0%BE%D0%B0%20%D0%95%D0%B3%D0%B8%D0%BF%D1%82%D1%83.%20/ Hello Mr. Waleed, I would like to inquire about booking a VIP tour in Egypt." target="_blank" class="btn btn-glow">
+                        <i class="fa-brands fa-whatsapp"></i> تواصل عبر الواتساب المباشر
                     </a>
-                    <a href="https://www.facebook.com/share/19HQfDVXs7/" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-lg shadow-lg hover:scale-105 transition duration-300 flex items-center justify-center gap-3">
-                        <i class="fa-brands fa-facebook text-2xl"></i> صفحة الفيسبوك
+                    <a href="https://www.facebook.com/share/19HQfDVXs7/" target="_blank" class="btn btn-facebook">
+                        <i class="fa-brands fa-facebook"></i> تابعني على فيسبوك
                     </a>
                 </div>
             </div>
-        </div>
-
+        </section>
     </main>
 
-    <!-- JS للتنقل -->
-    <script>
-        function showSection(sectionId) {
-            const tabs = document.querySelectorAll('.tab-content');
-            tabs.forEach(tab => tab.classList.add('hidden'));
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2026 - **وليد صابر أمين خليل** | مرشد سياحي VIP</p>
+    </footer>
 
-            const targetSection = document.getElementById('sec-' + sectionId);
-            if (targetSection) {
-                targetSection.classList.remove('hidden');
-            }
-        }
-    </script>
+    <!-- Custom Script -->
+    <script src="main.js"></script>
 </body>
 </html>
